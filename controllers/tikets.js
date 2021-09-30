@@ -11,13 +11,13 @@ module.exports.getTikets = (req, res, next) => {
       } else if (!tikets) {
         throw (new BadRequestError('Не удалось загрузить карточки'));
       }
-      return res.send({ data: tikets });
+      return res.send(tikets);
     })
     .catch(next);
 };
 
 module.exports.createTiket = (req, res, next) => {
-  const owner = req.user._id;
+  // const owner = req.user._id;
   const { message } = req.body;
   Tiket.create({ message, owner })
     .then((tiket) => {
