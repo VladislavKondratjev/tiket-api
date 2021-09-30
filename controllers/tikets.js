@@ -17,14 +17,14 @@ module.exports.getTikets = (req, res, next) => {
 };
 
 module.exports.createTiket = (req, res, next) => {
-  // const owner = req.user._id;
+  const owner = req.user._id;
   const { message } = req.body;
   Tiket.create({ message, owner })
     .then((tiket) => {
       if (!tiket) {
         throw (new BadRequestError('Переданы некорректные данные при создании карточки.'));
       }
-      return res.send({ data: tiket });
+      return res.send(tiket);
     })
     .catch(next);
 };

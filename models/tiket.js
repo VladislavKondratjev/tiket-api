@@ -6,11 +6,11 @@ const tiketSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  // owner: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: "user",
-  //   required: true,
-  // },
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "user",
+    required: true,
+  },
 });
 
 module.exports = mongoose.model('tiket', tiketSchema);
