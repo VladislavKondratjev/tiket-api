@@ -1,8 +1,8 @@
 const router = require("express").Router();
 const userRouter = require("./users");
 const tiketsRouter = require("./tikets");
-const { login, createUser } = require('../controllers/users');
 const auth = require('../middlewares/auth');
+const { login, createUser } = require('../controllers/users');
 
 router.post("/signin", login);
 router.post("/signup", createUser);

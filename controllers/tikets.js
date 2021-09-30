@@ -11,7 +11,7 @@ module.exports.getTikets = (req, res, next) => {
       } else if (!tikets) {
         throw (new BadRequestError('Не удалось загрузить карточки'));
       }
-      return res.send({ data: tikets });
+      return res.send(tikets);
     })
     .catch(next);
 };
@@ -24,7 +24,7 @@ module.exports.createTiket = (req, res, next) => {
       if (!tiket) {
         throw (new BadRequestError('Переданы некорректные данные при создании карточки.'));
       }
-      return res.send({ data: tiket });
+      return res.send(tiket);
     })
     .catch(next);
 };
